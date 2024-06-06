@@ -1,0 +1,25 @@
+body{
+    background-color: rgba(192, 189, 133, 0.753);
+    font-family: "Oswald", sans-serif;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px;
+}
+
+header{
+    background-color: rgb(248, 106, 106);
+    color: gold;
+    margin: -8px;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1{
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+}
+
+h2{
+    font-size: 32px;
+}
