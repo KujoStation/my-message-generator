@@ -41,3 +41,4 @@ function determineZodiacSign(year) {
     }
     return zodiac;
 }
+
