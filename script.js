@@ -63,3 +63,4 @@ let monkey = new zodiacSign('Monkey', '1932, 1944, 1956, 1968, 1980, 1992, 2004,
 let rooster = new zodiacSign('Rooster', '1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017','Observant, hardworking, courageous', '10th');
 let dog = new zodiacSign('Dog', '1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018','Lovely, honest, prudent', '11th');
 let pig = new zodiacSign('Pig', '1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019','Compassionate, generous, diligent', '12th');
+
