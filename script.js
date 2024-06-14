@@ -1,43 +1,45 @@
 function determineZodiacSign(year) {
     let yearDividedBy12 = year % 12;
     let zodiac;
-    switch (yearDividedBy12){
-        case 1:
-            zodiac = 'Rooster';
-            break;
-        case 2:
-            zodiac = 'Dog';
-            break;
-        case 3:
-            zodiac = 'Pig';
-            break;
-        case 4:
-            zodiac = 'Rat';
-            break;
-        case 5:
-            zodiac = 'Ox';
-            break;
-        case 6:
-            zodiac = 'Tiger';
-            break;
-        case 7:
-            zodiac = 'Rabbit';
-            break;
-        case 8:
-            zodiac = 'Dragon';
-            break;
-        case 9:
-            zodiac = 'Snake';
-            break;
-        case 10:
-            zodiac = 'Horse';
-            break;
-        case 11:
-            zodiac = 'Goat';
-            break;
-        case 0:
-            zodiac = 'Monkey';
-            break;
+    if (year != null){
+        switch (yearDividedBy12){
+            case 1:
+                zodiac = 'Rooster';
+                break;
+            case 2:
+                zodiac = 'Dog';
+                break;
+            case 3:
+                zodiac = 'Pig';
+                break;
+            case 4:
+                zodiac = 'Rat';
+                break;
+            case 5:
+                zodiac = 'Ox';
+                break;
+            case 6:
+                zodiac = 'Tiger';
+                break;
+            case 7:
+                zodiac = 'Rabbit';
+                break;
+            case 8:
+                zodiac = 'Dragon';
+                break;
+            case 9:
+                zodiac = 'Snake';
+                break;
+            case 10:
+                zodiac = 'Horse';
+                break;
+            case 11:
+                zodiac = 'Goat';
+                break;
+            case 0:
+                zodiac = 'Monkey';
+                break;
+        }
     }
     return zodiac;
 }
@@ -63,4 +65,27 @@ let monkey = new zodiacSign('Monkey', '1932, 1944, 1956, 1968, 1980, 1992, 2004,
 let rooster = new zodiacSign('Rooster', '1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017','Observant, hardworking, courageous', '10th');
 let dog = new zodiacSign('Dog', '1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018','Lovely, honest, prudent', '11th');
 let pig = new zodiacSign('Pig', '1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019','Compassionate, generous, diligent', '12th');
+
+let allZodiacs = [rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig];
+
+const button = document.querySelector('button');
+const words = new URLSearchParams(window.location.search);
+let input = words.get('dob')
+let personalZodiacSign = determineZodiacSign(input);
+
+
+function displayZodiac(zodiac) {
+    for(i = 0; i < allZodiacs.length; i++){
+        if (allZodiacs[i].name == zodiac){
+            document.getElementsByClassName('personal-zodiac')[0].style.opacity = "1";
+            document.getElementById('zodiac').innerHTML = `Your Zodiac Sign: <span>${allZodiacs[i].name}<span>`;
+            document.getElementById('years').innerHTML = `Years with your Zodiac Sign: <span>${allZodiacs[i].years}<span>`
+            document.getElementById('traits').innerHTML = `Traits from your Zodiac Sign: <span>${allZodiacs[i].traits}<span>`
+            document.getElementById('place').innerHTML = `Your Zodiac Sign's place in the Heavenly Gate Race: <span>${allZodiacs[i].placeInRace}<span>`;
+        }
+    }
+}
+
+button.onclick = displayZodiac(personalZodiacSign)
+
 
